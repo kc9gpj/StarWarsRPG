@@ -1,0 +1,11 @@
+.resize {
+    width: 150px;
+    height: 150px;
+}
+
+body {
+    /* background-image: url("https://i.imgur.com/vvwrrTk.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
