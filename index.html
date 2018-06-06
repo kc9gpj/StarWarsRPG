@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="assets/yodaicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="reset.css">
@@ -16,26 +18,34 @@
   <body>
 <nav class="navbar navbar-dark bg-dark">
 <span id="nav" class="navbar-brand mb-0 h1">Star Wars RPG</span>
-<button class="navbar" id="nav" onclick="newgame()">New Game</button>
+<button class="navbar" id="nav" style="background-color: gray;" onclick="newgame()">New Game</button>
        </nav>
        <br>
 <div class="container">
 <div id="light" class="row">
-<div id="yoda" class="col-sm-3">
+<div id="yoda" class="col-sm-2">
 <img src="assets/yoda.jpg" class="resize">
 <p>Yoda</p>
     </div>
-<div id="luke" class="col-sm-3">
+<div id="luke" class="col-sm-2">
 <img src="assets/luke.jpg" class="resize">
 <p>Luke Skywalker</p>
     </div>
-<div id="mace" class="col-sm-3">
+<div id="mace" class="col-sm-2">
 <img src="assets/mace.jpg" class="resize">
 <p>Mace Windu</p>
     </div>
-<div id="kenobi" class="col-sm-3">
+<div id="kenobi" class="col-sm-2">
 <img src="assets/obi.jpg" class="resize">
 <p>Obi-Wan Kenobi</p>
+    </div> 
+<div id="kit" class="col-sm-2">
+<img src="assets/kit.jpg" class="resize">
+<p>Kit Fisto</p>
+    </div> 
+<div id="kyle" class="col-sm-2">
+<img src="assets/kyle.jpg" class="resize">
+<p>Kyle Katarn</p>
     </div> 
 
         </div>
@@ -55,7 +65,7 @@
     </div>
 <div id="revan"  class="col-sm-3">
 <img src="assets/revan.jpg" class="resize">
-<p>Darth Revan</p>
+<p>Revan</p>
     </div>  
                 
         </div>
@@ -65,6 +75,18 @@
 <br>
 <br>
 <br>
+<div id="arena" class="row">
+<div id="lightArenaText" class="col-sm-4">
+        
+    </div>
+<div class="col-sm-4">
+        
+    </div>
+        
+<div id="darkArenaText" class="col-sm-4">
+            
+    </div>
+    </div>
 <div id="arena" class="row">
 <div id="lightArena" class="col-sm-4">
 
@@ -78,6 +100,7 @@
         </div>
 
 
+
             </div>
 
                  </div>
@@ -89,6 +112,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <audio id="lightSaber" preload="auto" src ="assets/SaberOn.wav"></audio> 
+    <!-- <audio id="darkSaber" preload="auto" src ="audio/bear.mp3"></audio>    -->
   </body>
   <script type="text/javascript" src="game.js"></script>
 
