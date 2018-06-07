@@ -1,17 +1,14 @@
 $(document).ready(function() {
-var winCounter = [];
-var lossCounter = [];
 var counterAttack = Math.floor((Math.random() * 10) + 1)
 var counterAttackTwo = Math.floor((Math.random() * 15) + 1)
-var counterAttackThree = Math.floor((Math.random() * 20) + 1)
-var counterAttackFour = Math.floor((Math.random() * 25) + 10)
-var attack = Math.floor((Math.random() * 50) + 20)
-var attackTwo = Math.floor((Math.random() * 50) + 20)
-var attackThree = Math.floor((Math.random() * 45) + 15)
-var attackFour = Math.floor((Math.random() * 40) + 15)
+var counterAttackThree = Math.floor((Math.random() * 15) + 1)
+var counterAttackFour = Math.floor((Math.random() * 20) + 10)
+var attack = Math.floor((Math.random() * 60) + 25)
+var attackTwo = Math.floor((Math.random() * 50) + 25)
+var attackThree = Math.floor((Math.random() * 50) + 20)
+var attackFour = Math.floor((Math.random() * 50) + 20)
 var selection = [];
-console.log(selection);
-
+// character info
 let characters = {
     'yoda': {
         name: 'yoda',
@@ -54,11 +51,10 @@ let characters = {
         hp: 130,
         }
             }
-
+// initial arena text
 $('#arenaText').text("Pick A Jedi!");
-// $('#light').css('border', '1px solid #ffd700');
-
-
+$('#dark').hide();
+// yoda start
 $('#yoda').click(function() { 
     selection = characters.yoda;
     $('#mace').hide();
@@ -68,10 +64,12 @@ $('#yoda').click(function() {
     $('#kyle').hide();
         $('#lightArenaText').text("HP "+selection.hp);
         $('#arenaText').text("").append("<button id='fight'>Click To Fight!</button>");
-            $("#yoda").appendTo("#lightArena");   
+            $("#yoda").appendTo("#lightArena"); 
+            $('#dark').show();
+  
             // $('#lightSaber').play(); 
 });
-
+// luke start
 $('#luke').click(function() { 
     selection = characters.luke;
     $('#mace').hide();
@@ -82,9 +80,11 @@ $('#luke').click(function() {
         $('#lightArenaText').text("HP "+selection.hp);
         $('#arenaText').text("").append("<button id='fight'>Click To Fight!</button>");
             $("#luke").appendTo("#lightArena");
+            $('#dark').show();
+
             // $('#lightSaber').play(); 
 });
-
+// mace start
 $('#mace').click(function() { 
     selection = characters.mace;
     $('#kenobi').hide();
@@ -95,9 +95,11 @@ $('#mace').click(function() {
         $('#lightArenaText').text("HP "+selection.hp);
         $('#arenaText').text("").append("<button id='fight'>Click To Fight!</button>");
             $("#mace").appendTo("#lightArena");
+            $('#dark').show();
+
             // $('#lightSaber').play(); 
 });
-
+// kenobi start
 $('#kenobi').click(function() { 
     selection = characters.kenobi;
     $('#mace').hide();
@@ -108,10 +110,12 @@ $('#kenobi').click(function() {
         $('#lightArenaText').text("HP "+selection.hp);
         $('#arenaText').text("").append("<button id='fight'>Click To Fight!</button>");
             $("#kenobi").appendTo("#lightArena");
+            $('#dark').show();
+
             // $('#lightSaber').play(); 
 
 });
-
+// kit fisto start
 $('#kit').click(function() { 
     selection = characters.kit;
     $('#mace').hide();
@@ -121,10 +125,12 @@ $('#kit').click(function() {
     $('#yoda').hide();
         $('#lightArenaText').text("HP "+selection.hp);
         $('#arenaText').text("").append("<button id='fight'>Click To Fight!</button>");
-            $("#kit").appendTo("#lightArena");   
+            $("#kit").appendTo("#lightArena");  
+            $('#dark').show();
+ 
             // $('#lightSaber').play(); 
 });
-
+// kyle katarn start
 $('#kyle').click(function() { 
     selection = characters.kyle;
     $('#mace').hide();
@@ -135,9 +141,10 @@ $('#kyle').click(function() {
         $('#lightArenaText').text("HP "+selection.hp);
         $('#arenaText').text("").append("<button id='fight'>Click To Fight!</button>");
             $("#kyle").appendTo("#lightArena");   
+            $('#dark').show();
             // $('#lightSaber').play(); 
 });
-
+// fight button after jedi pick 
 $('body').on('click', '#fight', function () {
     $('#darkArenaText').text("HP "+characters.vader.hp);
     $('#arenaText').text("");
@@ -145,7 +152,7 @@ $('body').on('click', '#fight', function () {
     $('#vader').appendTo("#darkArena");
 
   });
-
+// first attack sequence vs vader
 $('body').on('click', '#attack1', function () {
     characters.vader.hp = characters.vader.hp - attack;
     selection.hp = selection.hp - counterAttack;
@@ -168,7 +175,7 @@ $('body').on('click', '#attack1', function () {
         $('#sidious').hide();
         $('#darkArenaText').text("");  
     }
-
+// second attack sequence vs revan
 $('body').on('click', '#attack2', function () {
     characters.revan.hp = characters.revan.hp - attackTwo;
     selection.hp = selection.hp - counterAttackTwo;
@@ -192,7 +199,7 @@ $('body').on('click', '#attack2', function () {
         $('#sidious').hide();
         $('#darkArenaText').text("");  
     }
-
+// third attack sequence vs bane
 $('body').on('click', '#attack3', function () {
         characters.bane.hp = characters.bane.hp - attackThree;
         selection.hp = selection.hp - counterAttackThree;
@@ -215,6 +222,7 @@ $('body').on('click', '#attack3', function () {
         $('#sidious').hide();
         $('#darkArenaText').text("");  
     }
+    // fourth attack sequence vs sidious
 $('body').on('click', '#attack4', function () {
         characters.sidious.hp = characters.sidious.hp - attackFour;
         selection.hp = selection.hp - counterAttackFour;
@@ -235,29 +243,14 @@ $('body').on('click', '#attack4', function () {
         $('#lightArenaText').text('');
         $("#lightArena").hide();
         $('#sidious').hide();
-        $('#darkArenaText').text("");
-    
-    
-        
-    }
-
- 
-       
+        $('#darkArenaText').text("");   
+    }      
 }); 
-
-
-
-});  
-
-
-    
+});    
 });
-
 });
-
-
 });
-
+// new game button function
 function newgame() {
     location.reload();
 }
